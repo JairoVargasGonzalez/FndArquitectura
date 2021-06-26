@@ -12,16 +12,14 @@ public class Rol implements Serializable {
     private static final long serialVersionUID = 6362794385792247263L;
 
     private long id;
-    private  String descripcion;
+    private String descripcion;
     private String  siglaRol;
     private boolean estado;
 
-    public Rol(){
-
-    }
+    public Rol(){}
 
     @Id
-    @-( strategy = GenerationType.IDENTITY )
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column(name="ID_ROL_PK", nullable = false)
 
 
@@ -59,6 +57,12 @@ public class Rol implements Serializable {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    @Override
+    public String toString() {
+        return "Rol [id=" + id + ", descripcion=" + descripcion + ", siglaRol=" + siglaRol + ", estado=" + estado + "]";
+    }
 }
+
 
 
