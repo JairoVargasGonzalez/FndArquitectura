@@ -12,7 +12,7 @@ import java.util.List;
 public class UsuarioRestController {
 
     @Autowired
-    private IUsuarioServices usuarioServices;
+    IUsuarioServices usuarioServices;
 
     @GetMapping("/usuario")
     public List<Usuario> index() {

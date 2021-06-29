@@ -1,0 +1,38 @@
+CREATE database springArquitectura;
+
+use springArquitectura;
+
+create table ROL
+(
+    ID_ROL_PK   int auto_increment primary key not null,
+    DESCRIPCION varchar(45),
+    SIGLA_ROL   varchar(30),
+    ESTADO      boolean
+);
+
+
+create table DEPENDENCIA
+(
+    ID_DEPENDENCIA_PK int auto_increment primary key not null,
+    CODIGO            varchar(40),
+    DESCRIPCION       varchar(50),
+    CARGO             varchar(40),
+    ESTADO            boolean
+);
+
+
+create table USUARIOS
+(
+    ID_USUARIO_PK     int auto_increment primary key not null,
+    DOCUMENTO         varchar(15),
+    USERNAME          varchar(35),
+    NOMBRE            varchar(45),
+    EMAIL             varchar(35),
+    ESTADO            boolean,
+    ID_ROL_FK         int                            not null,
+    ID_DEPENDENCIA_FK int                            not null,
+    foreign key (ID_ROL_FK)
+        references ROL (ID_ROL_PK),
+    foreign key (ID_DEPENDENCIA_FK)
+        references DEPENDENCIA (ID_DEPENDENCIA_PK)
+);
