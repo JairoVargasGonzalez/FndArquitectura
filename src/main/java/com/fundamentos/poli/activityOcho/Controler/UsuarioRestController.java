@@ -1,9 +1,9 @@
-package Controler;
+package com.fundamentos.poli.activityOcho.Controler;
 
-import entities.Usuario;
+import com.fundamentos.poli.activityOcho.entities.Usuarios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import services.IUsuarioServices;
+import com.fundamentos.poli.activityOcho.services.IUsuarioServices;
 
 import java.util.List;
 
@@ -15,13 +15,14 @@ public class UsuarioRestController {
     IUsuarioServices usuarioServices;
 
     @GetMapping("/usuario")
-    public List<Usuario> index() {
+    public List<Usuarios> index() {
+        System.out.println("HOLA MUNDO");
       return usuarioServices.findAll();
     }
 
     @PostMapping("/usuario")
-    public  Usuario create(@RequestBody Usuario usuario){
-        return usuarioServices.create(usuario);
+    public Usuarios create(@RequestBody Usuarios usuarios){
+        return usuarioServices.create(usuarios);
     }
 
 }

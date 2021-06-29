@@ -1,8 +1,12 @@
-package entities;
+package com.fundamentos.poli.activityOcho.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-public class Usuario {
+@Entity
+public class Usuarios  {
+
+  //  private static final long serialVersionUID = 1265660971450473499L;
 
     private long id;
     private String documento;

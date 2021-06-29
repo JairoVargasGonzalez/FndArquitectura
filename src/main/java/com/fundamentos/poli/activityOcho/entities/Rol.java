@@ -1,12 +1,10 @@
-package entities;
+package com.fundamentos.poli.activityOcho.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import javax.persistence.Entity;
 
 @Entity
-@Table(name="ROL")
-
 public class Rol implements Serializable {
 
     private static final long serialVersionUID = 6362794385792247263L;
